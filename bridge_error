@@ -1,0 +1,334 @@
+Starting >>> ros1_bridge
+--- stderr: ros1_bridge                            
+CMake Warning at CMakeLists.txt:174 (add_library):
+  Cannot generate a safe runtime search path for target ros1_bridge because
+  files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [liburdfdom_sensor.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_model_state.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_model.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_world.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+
+  Some of these libraries may not be found correctly.
+
+
+CMake Warning at CMakeLists.txt:145 (add_executable):
+  Cannot generate a safe runtime search path for target static_bridge because
+  files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [liburdfdom_sensor.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_model_state.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_model.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_world.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+
+  Some of these libraries may not be found correctly.
+Call Stack (most recent call first):
+  CMakeLists.txt:191 (custom_executable)
+
+
+CMake Warning at CMakeLists.txt:145 (add_executable):
+  Cannot generate a safe runtime search path for target parameter_bridge
+  because files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [liburdfdom_sensor.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_model_state.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_model.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_world.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+
+  Some of these libraries may not be found correctly.
+Call Stack (most recent call first):
+  CMakeLists.txt:198 (custom_executable)
+
+
+CMake Warning at CMakeLists.txt:145 (add_executable):
+  Cannot generate a safe runtime search path for target dynamic_bridge
+  because files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [liburdfdom_sensor.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_model_state.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_model.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+    runtime library [liburdfdom_world.so.1.0] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /opt/ros/dashing/lib
+
+  Some of these libraries may not be found correctly.
+Call Stack (most recent call first):
+  CMakeLists.txt:205 (custom_executable)
+
+
+/home/lucab/dev_ws/test/test_ros2_client.cpp: In function ‘int main(int, char**)’:
+/home/lucab/dev_ws/test/test_ros2_client.cpp:37:13: error: ‘rclcpp::FutureReturnCode’ has not been declared
+     rclcpp::FutureReturnCode::SUCCESS)
+             ^~~~~~~~~~~~~~~~
+make[2]: *** [CMakeFiles/test_ros2_client_cpp.dir/test/test_ros2_client.cpp.o] Error 1
+make[1]: *** [CMakeFiles/test_ros2_client_cpp.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+In file included from /home/lucab/dev_ws/build/ros1_bridge/generated/action_msgs_factories.hpp:6:0,
+                 from /home/lucab/dev_ws/build/ros1_bridge/generated/action_msgs_factories.cpp:3:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:213:19: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+     const rclcpp::MessageInfo & msg_info,
+                   ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In member function ‘rclcpp::SubscriptionBase::SharedPtr ros1_bridge::Factory<ROS1_T, ROS2_T>::create_ros2_subscriber(rclcpp::Node::SharedPtr, const string&, const rclcpp::QoS&, ros::Publisher, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:142:64: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+       void(const typename ROS2_T::SharedPtr msg, const rclcpp::MessageInfo & msg_info)> callback;
+                                                                ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In static member function ‘static void ros1_bridge::Factory<ROS1_T, ROS2_T>::ros2_callback(typename ROS2_T::SharedPtr, const int&, ros::Publisher, const string&, const string&, rclcpp::Logger, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:223:19: error: request for member ‘get_rmw_message_info’ in ‘msg_info’, which is of non-class type ‘const int’
+         &msg_info.get_rmw_message_info().publisher_gid,
+                   ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/lucab/dev_ws/include/ros1_bridge/builtin_interfaces_factories.hpp:29:0,
+                 from /home/lucab/dev_ws/src/builtin_interfaces_factories.cpp:21:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:213:19: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+     const rclcpp::MessageInfo & msg_info,
+                   ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In member function ‘rclcpp::SubscriptionBase::SharedPtr ros1_bridge::Factory<ROS1_T, ROS2_T>::create_ros2_subscriber(rclcpp::Node::SharedPtr, const string&, const rclcpp::QoS&, ros::Publisher, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:142:64: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+       void(const typename ROS2_T::SharedPtr msg, const rclcpp::MessageInfo & msg_info)> callback;
+                                                                ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In static member function ‘static void ros1_bridge::Factory<ROS1_T, ROS2_T>::ros2_callback(typename ROS2_T::SharedPtr, const int&, ros::Publisher, const string&, const string&, rclcpp::Logger, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:223:19: error: request for member ‘get_rmw_message_info’ in ‘msg_info’, which is of non-class type ‘const int’
+         &msg_info.get_rmw_message_info().publisher_gid,
+                   ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/lucab/dev_ws/build/ros1_bridge/generated/action_msgs_factories.hpp:6:0,
+                 from /home/lucab/dev_ws/build/ros1_bridge/generated/action_msgs__msg__GoalStatus__factories.cpp:3:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:213:19: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+     const rclcpp::MessageInfo & msg_info,
+                   ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In member function ‘rclcpp::SubscriptionBase::SharedPtr ros1_bridge::Factory<ROS1_T, ROS2_T>::create_ros2_subscriber(rclcpp::Node::SharedPtr, const string&, const rclcpp::QoS&, ros::Publisher, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:142:64: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+       void(const typename ROS2_T::SharedPtr msg, const rclcpp::MessageInfo & msg_info)> callback;
+                                                                ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In static member function ‘static void ros1_bridge::Factory<ROS1_T, ROS2_T>::ros2_callback(typename ROS2_T::SharedPtr, const int&, ros::Publisher, const string&, const string&, rclcpp::Logger, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:223:19: error: request for member ‘get_rmw_message_info’ in ‘msg_info’, which is of non-class type ‘const int’
+         &msg_info.get_rmw_message_info().publisher_gid,
+                   ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/lucab/dev_ws/build/ros1_bridge/generated/action_msgs_factories.hpp:6:0,
+                 from /home/lucab/dev_ws/build/ros1_bridge/generated/action_msgs__msg__GoalInfo__factories.cpp:3:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:213:19: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+     const rclcpp::MessageInfo & msg_info,
+                   ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In member function ‘rclcpp::SubscriptionBase::SharedPtr ros1_bridge::Factory<ROS1_T, ROS2_T>::create_ros2_subscriber(rclcpp::Node::SharedPtr, const string&, const rclcpp::QoS&, ros::Publisher, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:142:64: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+       void(const typename ROS2_T::SharedPtr msg, const rclcpp::MessageInfo & msg_info)> callback;
+                                                                ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In static member function ‘static void ros1_bridge::Factory<ROS1_T, ROS2_T>::ros2_callback(typename ROS2_T::SharedPtr, const int&, ros::Publisher, const string&, const string&, rclcpp::Logger, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:223:19: error: request for member ‘get_rmw_message_info’ in ‘msg_info’, which is of non-class type ‘const int’
+         &msg_info.get_rmw_message_info().publisher_gid,
+                   ^~~~~~~~~~~~~~~~~~~~
+In file included from /home/lucab/dev_ws/build/ros1_bridge/generated/get_factory.cpp:3:0:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:213:19: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+     const rclcpp::MessageInfo & msg_info,
+                   ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In member function ‘rclcpp::SubscriptionBase::SharedPtr ros1_bridge::Factory<ROS1_T, ROS2_T>::create_ros2_subscriber(rclcpp::Node::SharedPtr, const string&, const rclcpp::QoS&, ros::Publisher, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:142:64: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+       void(const typename ROS2_T::SharedPtr msg, const rclcpp::MessageInfo & msg_info)> callback;
+                                                                ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In static member function ‘static void ros1_bridge::Factory<ROS1_T, ROS2_T>::ros2_callback(typename ROS2_T::SharedPtr, const int&, ros::Publisher, const string&, const string&, rclcpp::Logger, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:223:19: error: request for member ‘get_rmw_message_info’ in ‘msg_info’, which is of non-class type ‘const int’
+         &msg_info.get_rmw_message_info().publisher_gid,
+                   ^~~~~~~~~~~~~~~~~~~~
+make[2]: *** [CMakeFiles/ros1_bridge.dir/generated/action_msgs_factories.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[2]: *** [CMakeFiles/ros1_bridge.dir/generated/action_msgs__msg__GoalStatus__factories.cpp.o] Error 1
+make[2]: *** [CMakeFiles/ros1_bridge.dir/generated/action_msgs__msg__GoalInfo__factories.cpp.o] Error 1
+In file included from /opt/ros/dashing/include/rclcpp/node_interfaces/node_topics_interface.hpp:29:0,
+                 from /opt/ros/dashing/include/rclcpp/node.hpp:53,
+                 from /opt/ros/dashing/include/rclcpp/executors/single_threaded_executor.hpp:28,
+                 from /opt/ros/dashing/include/rclcpp/executors.hpp:22,
+                 from /opt/ros/dashing/include/rclcpp/rclcpp.hpp:144,
+                 from /home/lucab/dev_ws/src/builtin_interfaces_factories.cpp:18:
+/opt/ros/dashing/include/rclcpp/subscription_factory.hpp: In instantiation of ‘rclcpp::SubscriptionFactory rclcpp::create_subscription_factory(CallbackT&&, const rclcpp::SubscriptionEventCallbacks&, typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr, std::shared_ptr<PublisherT>) [with MessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; CallbackT = std::function<void(std::shared_ptr<builtin_interfaces::msg::Time_<std::allocator<void> > >, const int&)>&; Alloc = std::allocator<void>; CallbackMessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; SubscriptionT = rclcpp::Subscription<builtin_interfaces::msg::Time_<std::allocator<void> >, std::allocator<void> >; typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<builtin_interfaces::msg::Time_<std::allocator<void> >, std::allocator<void> > >]’:
+/opt/ros/dashing/include/rclcpp/create_subscription.hpp:115:71:   required from ‘std::shared_ptr<SubscriptionT> rclcpp::create_subscription(NodeT&&, const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr) [with MessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; CallbackT = std::function<void(std::shared_ptr<builtin_interfaces::msg::Time_<std::allocator<void> > >, const int&)>&; AllocatorT = std::allocator<void>; CallbackMessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; SubscriptionT = rclcpp::Subscription<builtin_interfaces::msg::Time_<std::allocator<void> >, std::allocator<void> >; NodeT = rclcpp::Node&; std::__cxx11::string = std::__cxx11::basic_string<char>; typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<builtin_interfaces::msg::Time_<std::allocator<void> >, std::allocator<void> > >]’
+/opt/ros/dashing/include/rclcpp/node_impl.hpp:124:47:   required from ‘std::shared_ptr<SubscriptionT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename rclcpp::message_memory_strategy::MessageMemoryStrategy<typename rclcpp::subscription_traits::has_message_type<CallbackT>::type, AllocatorT>::SharedPtr) [with MessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; CallbackT = std::function<void(std::shared_ptr<builtin_interfaces::msg::Time_<std::allocator<void> > >, const int&)>&; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<builtin_interfaces::msg::Time_<std::allocator<void> >, std::allocator<void> >; std::__cxx11::string = std::__cxx11::basic_string<char>; typename rclcpp::message_memory_strategy::MessageMemoryStrategy<typename rclcpp::subscription_traits::has_message_type<CallbackT>::type, AllocatorT>::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<builtin_interfaces::msg::Time_<std::allocator<void> >, std::allocator<void> > >]’
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:149:41:   required from ‘rclcpp::SubscriptionBase::SharedPtr ros1_bridge::Factory<ROS1_T, ROS2_T>::create_ros2_subscriber(rclcpp::Node::SharedPtr, const string&, const rclcpp::QoS&, ros::Publisher, rclcpp::PublisherBase::SharedPtr) [with ROS1_T = std_msgs::Time_<std::allocator<void> >; ROS2_T = builtin_interfaces::msg::Time_<std::allocator<void> >; rclcpp::SubscriptionBase::SharedPtr = std::shared_ptr<rclcpp::SubscriptionBase>; rclcpp::Node::SharedPtr = std::shared_ptr<rclcpp::Node>; std::__cxx11::string = std::__cxx11::basic_string<char>; rclcpp::PublisherBase::SharedPtr = std::shared_ptr<rclcpp::PublisherBase>]’
+/home/lucab/dev_ws/src/builtin_interfaces_factories.cpp:107:1:   required from here
+/opt/ros/dashing/include/rclcpp/subscription_factory.hpp:93:3: error: no matching function for call to ‘rclcpp::AnySubscriptionCallback<builtin_interfaces::msg::Time_<std::allocator<void> >, std::allocator<void> >::set(std::function<void(std::shared_ptr<builtin_interfaces::msg::Time_<std::allocator<void> > >, const int&)>&)’
+   any_subscription_callback.set(std::forward<CallbackT>(callback));
+   ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/ros/dashing/include/rclcpp/subscription_base.hpp:28:0,
+                 from /opt/ros/dashing/include/rclcpp/intra_process_manager_impl.hpp:38,
+                 from /opt/ros/dashing/include/rclcpp/intra_process_manager.hpp:32,
+                 from /opt/ros/dashing/include/rclcpp/publisher.hpp:35,
+                 from /opt/ros/dashing/include/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/dashing/include/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/dashing/include/rclcpp/memory_strategy.hpp:24,
+                 from /opt/ros/dashing/include/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/dashing/include/rclcpp/executor.hpp:33,
+                 from /opt/ros/dashing/include/rclcpp/executors/multi_threaded_executor.hpp:24,
+                 from /opt/ros/dashing/include/rclcpp/executors.hpp:21,
+                 from /opt/ros/dashing/include/rclcpp/rclcpp.hpp:144,
+                 from /home/lucab/dev_ws/src/builtin_interfaces_factories.cpp:18:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:80:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<builtin_interfaces::msg::Time_<std::allocator<void> > >)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<_Tp>)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:80:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:78:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:78:17: note: invalid template non-type parameter
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:94:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<builtin_interfaces::msg::Time_<std::allocator<void> > >, const rmw_message_info_t&)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<_Tp>, const rmw_message_info_t&)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:94:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:92:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:92:17: note: invalid template non-type parameter
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:108:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<const builtin_interfaces::msg::Time_<std::allocator<void> > >)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<const _Tp>)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:108:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:106:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:106:17: note: invalid template non-type parameter
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:122:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<const builtin_interfaces::msg::Time_<std::allocator<void> > >, const rmw_message_info_t&)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<const _Tp>, const rmw_message_info_t&)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:122:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:120:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:120:17: note: invalid template non-type parameter
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:136:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::unique_ptr<builtin_interfaces::msg::Time_<std::allocator<void> >, std::default_delete<builtin_interfaces::msg::Time_<std::allocator<void> > > >)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Alloc>::rebind_traits<T>::allocator_type>::rebind_alloc<T>, typename std::allocator<void>::rebind<_Tp1>::other>::value, std::default_delete<_Tp>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Alloc>::rebind_traits<T>::allocator_type> >::type>)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:136:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:134:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:134:17: note: invalid template non-type parameter
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:150:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::unique_ptr<builtin_interfaces::msg::Time_<std::allocator<void> >, std::default_delete<builtin_interfaces::msg::Time_<std::allocator<void> > > >, const rmw_message_info_t&)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Alloc>::rebind_traits<T>::allocator_type>::rebind_alloc<T>, typename std::allocator<void>::rebind<_Tp1>::other>::value, std::default_delete<_Tp>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Alloc>::rebind_traits<T>::allocator_type> >::type>, const rmw_message_info_t&)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:150:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:148:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:148:17: note: invalid template non-type parameter
+In file included from /opt/ros/dashing/include/rclcpp/node_interfaces/node_topics_interface.hpp:29:0,
+                 from /opt/ros/dashing/include/rclcpp/node.hpp:53,
+                 from /opt/ros/dashing/include/rclcpp/executors/single_threaded_executor.hpp:28,
+                 from /opt/ros/dashing/include/rclcpp/executors.hpp:22,
+                 from /opt/ros/dashing/include/rclcpp/rclcpp.hpp:144,
+                 from /home/lucab/dev_ws/src/builtin_interfaces_factories.cpp:18:
+/opt/ros/dashing/include/rclcpp/subscription_factory.hpp: In instantiation of ‘rclcpp::SubscriptionFactory rclcpp::create_subscription_factory(CallbackT&&, const rclcpp::SubscriptionEventCallbacks&, typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr, std::shared_ptr<PublisherT>) [with MessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; CallbackT = std::function<void(std::shared_ptr<builtin_interfaces::msg::Duration_<std::allocator<void> > >, const int&)>&; Alloc = std::allocator<void>; CallbackMessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; SubscriptionT = rclcpp::Subscription<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::allocator<void> >; typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::allocator<void> > >]’:
+/opt/ros/dashing/include/rclcpp/create_subscription.hpp:115:71:   required from ‘std::shared_ptr<SubscriptionT> rclcpp::create_subscription(NodeT&&, const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr) [with MessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; CallbackT = std::function<void(std::shared_ptr<builtin_interfaces::msg::Duration_<std::allocator<void> > >, const int&)>&; AllocatorT = std::allocator<void>; CallbackMessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; SubscriptionT = rclcpp::Subscription<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::allocator<void> >; NodeT = rclcpp::Node&; std::__cxx11::string = std::__cxx11::basic_string<char>; typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::allocator<void> > >]’
+/opt/ros/dashing/include/rclcpp/node_impl.hpp:124:47:   required from ‘std::shared_ptr<SubscriptionT> rclcpp::Node::create_subscription(const string&, const rclcpp::QoS&, CallbackT&&, const rclcpp::SubscriptionOptionsWithAllocator<AllocatorT>&, typename rclcpp::message_memory_strategy::MessageMemoryStrategy<typename rclcpp::subscription_traits::has_message_type<CallbackT>::type, AllocatorT>::SharedPtr) [with MessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; CallbackT = std::function<void(std::shared_ptr<builtin_interfaces::msg::Duration_<std::allocator<void> > >, const int&)>&; AllocatorT = std::allocator<void>; SubscriptionT = rclcpp::Subscription<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::allocator<void> >; std::__cxx11::string = std::__cxx11::basic_string<char>; typename rclcpp::message_memory_strategy::MessageMemoryStrategy<typename rclcpp::subscription_traits::has_message_type<CallbackT>::type, AllocatorT>::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::allocator<void> > >]’
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:149:41:   required from ‘rclcpp::SubscriptionBase::SharedPtr ros1_bridge::Factory<ROS1_T, ROS2_T>::create_ros2_subscriber(rclcpp::Node::SharedPtr, const string&, const rclcpp::QoS&, ros::Publisher, rclcpp::PublisherBase::SharedPtr) [with ROS1_T = std_msgs::Duration_<std::allocator<void> >; ROS2_T = builtin_interfaces::msg::Duration_<std::allocator<void> >; rclcpp::SubscriptionBase::SharedPtr = std::shared_ptr<rclcpp::SubscriptionBase>; rclcpp::Node::SharedPtr = std::shared_ptr<rclcpp::Node>; std::__cxx11::string = std::__cxx11::basic_string<char>; rclcpp::PublisherBase::SharedPtr = std::shared_ptr<rclcpp::PublisherBase>]’
+/home/lucab/dev_ws/src/builtin_interfaces_factories.cpp:107:1:   required from here
+/opt/ros/dashing/include/rclcpp/subscription_factory.hpp:93:3: error: no matching function for call to ‘rclcpp::AnySubscriptionCallback<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::allocator<void> >::set(std::function<void(std::shared_ptr<builtin_interfaces::msg::Duration_<std::allocator<void> > >, const int&)>&)’
+   any_subscription_callback.set(std::forward<CallbackT>(callback));
+   ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /opt/ros/dashing/include/rclcpp/subscription_base.hpp:28:0,
+                 from /opt/ros/dashing/include/rclcpp/intra_process_manager_impl.hpp:38,
+                 from /opt/ros/dashing/include/rclcpp/intra_process_manager.hpp:32,
+                 from /opt/ros/dashing/include/rclcpp/publisher.hpp:35,
+                 from /opt/ros/dashing/include/rclcpp/callback_group.hpp:24,
+                 from /opt/ros/dashing/include/rclcpp/any_executable.hpp:20,
+                 from /opt/ros/dashing/include/rclcpp/memory_strategy.hpp:24,
+                 from /opt/ros/dashing/include/rclcpp/memory_strategies.hpp:18,
+                 from /opt/ros/dashing/include/rclcpp/executor.hpp:33,
+                 from /opt/ros/dashing/include/rclcpp/executors/multi_threaded_executor.hpp:24,
+                 from /opt/ros/dashing/include/rclcpp/executors.hpp:21,
+                 from /opt/ros/dashing/include/rclcpp/rclcpp.hpp:144,
+                 from /home/lucab/dev_ws/src/builtin_interfaces_factories.cpp:18:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:80:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<builtin_interfaces::msg::Duration_<std::allocator<void> > >)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<_Tp>)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:80:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:78:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:78:17: note: invalid template non-type parameter
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:94:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<builtin_interfaces::msg::Duration_<std::allocator<void> > >, const rmw_message_info_t&)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<_Tp>, const rmw_message_info_t&)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:94:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:92:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:92:17: note: invalid template non-type parameter
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:108:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<const builtin_interfaces::msg::Duration_<std::allocator<void> > >)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<const _Tp>)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:108:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:106:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:106:17: note: invalid template non-type parameter
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:122:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<const builtin_interfaces::msg::Duration_<std::allocator<void> > >, const rmw_message_info_t&)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::shared_ptr<const _Tp>, const rmw_message_info_t&)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:122:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:120:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:120:17: note: invalid template non-type parameter
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:136:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::unique_ptr<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::default_delete<builtin_interfaces::msg::Duration_<std::allocator<void> > > >)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Alloc>::rebind_traits<T>::allocator_type>::rebind_alloc<T>, typename std::allocator<void>::rebind<_Tp1>::other>::value, std::default_delete<_Tp>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Alloc>::rebind_traits<T>::allocator_type> >::type>)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:136:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:134:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:134:17: note: invalid template non-type parameter
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:150:8: note: candidate: template<class CallbackT, typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::unique_ptr<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::default_delete<builtin_interfaces::msg::Duration_<std::allocator<void> > > >, const rmw_message_info_t&)> >::value, void>::type* <anonymous> > void rclcpp::AnySubscriptionCallback<MessageT, Alloc>::set(CallbackT) [with CallbackT = CallbackT; typename std::enable_if<rclcpp::function_traits::same_arguments<CallbackT, std::function<void(std::unique_ptr<T, typename std::conditional<std::is_same<typename std::allocator_traits<typename std::allocator_traits<_Alloc>::rebind_traits<T>::allocator_type>::rebind_alloc<T>, typename std::allocator<void>::rebind<_Tp1>::other>::value, std::default_delete<_Tp>, rclcpp::allocator::AllocatorDeleter<typename std::allocator_traits<_Alloc>::rebind_traits<T>::allocator_type> >::type>, const rmw_message_info_t&)> >::value>::type* <anonymous> = <enumerator>; MessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; Alloc = std::allocator<void>]
+   void set(CallbackT callback)
+        ^~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:150:8: note:   template argument deduction/substitution failed:
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:148:17: error: no type named ‘type’ in ‘struct std::enable_if<false, void>’
+     >::type * = nullptr
+                 ^~~~~~~
+/opt/ros/dashing/include/rclcpp/any_subscription_callback.hpp:148:17: note: invalid template non-type parameter
+In file included from /home/lucab/dev_ws/build/ros1_bridge/generated/action_msgs_factories.hpp:6:0,
+                 from /home/lucab/dev_ws/build/ros1_bridge/generated/action_msgs__msg__GoalStatusArray__factories.cpp:3:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:213:19: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+     const rclcpp::MessageInfo & msg_info,
+                   ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In member function ‘rclcpp::SubscriptionBase::SharedPtr ros1_bridge::Factory<ROS1_T, ROS2_T>::create_ros2_subscriber(rclcpp::Node::SharedPtr, const string&, const rclcpp::QoS&, ros::Publisher, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:142:64: error: ‘MessageInfo’ in namespace ‘rclcpp’ does not name a type
+       void(const typename ROS2_T::SharedPtr msg, const rclcpp::MessageInfo & msg_info)> callback;
+                                                                ^~~~~~~~~~~
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp: In static member function ‘static void ros1_bridge::Factory<ROS1_T, ROS2_T>::ros2_callback(typename ROS2_T::SharedPtr, const int&, ros::Publisher, const string&, const string&, rclcpp::Logger, rclcpp::PublisherBase::SharedPtr)’:
+/home/lucab/dev_ws/include/ros1_bridge/factory.hpp:223:19: error: request for member ‘get_rmw_message_info’ in ‘msg_info’, which is of non-class type ‘const int’
+         &msg_info.get_rmw_message_info().publisher_gid,
+                   ^~~~~~~~~~~~~~~~~~~~
+make[2]: *** [CMakeFiles/ros1_bridge.dir/generated/get_factory.cpp.o] Error 1
+In file included from /usr/include/c++/7/future:48:0,
+                 from /opt/ros/dashing/include/rclcpp/executors.hpp:18,
+                 from /opt/ros/dashing/include/rclcpp/rclcpp.hpp:144,
+                 from /home/lucab/dev_ws/src/builtin_interfaces_factories.cpp:18:
+/usr/include/c++/7/bits/std_function.h: At global scope:
+/usr/include/c++/7/bits/std_function.h:541:2: error: ‘std::function<_Res(_ArgTypes ...)>::_Requires<std::function<_Res(_ArgTypes ...)>::_Callable<typename std::decay<_U1>::type>, std::function<_Res(_ArgTypes ...)>&> std::function<_Res(_ArgTypes ...)>::operator=(_Functor&&) [with _Functor = rclcpp::create_subscription_factory(CallbackT&&, const rclcpp::SubscriptionEventCallbacks&, typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr, std::shared_ptr<PublisherT>) [with MessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; CallbackT = std::function<void(std::shared_ptr<builtin_interfaces::msg::Time_<std::allocator<void> > >, const int&)>&; Alloc = std::allocator<void>; CallbackMessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; SubscriptionT = rclcpp::Subscription<builtin_interfaces::msg::Time_<std::allocator<void> >, std::allocator<void> >; typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<builtin_interfaces::msg::Time_<std::allocator<void> >, std::allocator<void> > >]::<lambda(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rcl_subscription_options_t&)>; _Res = std::shared_ptr<rclcpp::SubscriptionBase>; _ArgTypes = {rclcpp::node_interfaces::NodeBaseInterface*, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const rcl_subscription_options_t&}; std::function<_Res(_ArgTypes ...)>::_Requires<std::function<_Res(_ArgTypes ...)>::_Callable<typename std::decay<_U1>::type>, std::function<_Res(_ArgTypes ...)>&> = std::function<std::shared_ptr<rclcpp::SubscriptionBase>(rclcpp::node_interfaces::NodeBaseInterface*, const std::__cxx11::basic_string<char>&, const rcl_subscription_options_t&)>&]’, declared using local type ‘rclcpp::create_subscription_factory(CallbackT&&, const rclcpp::SubscriptionEventCallbacks&, typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr, std::shared_ptr<PublisherT>) [with MessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; CallbackT = std::function<void(std::shared_ptr<builtin_interfaces::msg::Time_<std::allocator<void> > >, const int&)>&; Alloc = std::allocator<void>; CallbackMessageT = builtin_interfaces::msg::Time_<std::allocator<void> >; SubscriptionT = rclcpp::Subscription<builtin_interfaces::msg::Time_<std::allocator<void> >, std::allocator<void> >; typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<builtin_interfaces::msg::Time_<std::allocator<void> >, std::allocator<void> > >]::<lambda(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rcl_subscription_options_t&)>’, is used but never defined [-fpermissive]
+  operator=(_Functor&& __f)
+  ^~~~~~~~
+/usr/include/c++/7/bits/std_function.h:541:2: error: ‘std::function<_Res(_ArgTypes ...)>::_Requires<std::function<_Res(_ArgTypes ...)>::_Callable<typename std::decay<_U1>::type>, std::function<_Res(_ArgTypes ...)>&> std::function<_Res(_ArgTypes ...)>::operator=(_Functor&&) [with _Functor = rclcpp::create_subscription_factory(CallbackT&&, const rclcpp::SubscriptionEventCallbacks&, typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr, std::shared_ptr<PublisherT>) [with MessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; CallbackT = std::function<void(std::shared_ptr<builtin_interfaces::msg::Duration_<std::allocator<void> > >, const int&)>&; Alloc = std::allocator<void>; CallbackMessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; SubscriptionT = rclcpp::Subscription<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::allocator<void> >; typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::allocator<void> > >]::<lambda(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rcl_subscription_options_t&)>; _Res = std::shared_ptr<rclcpp::SubscriptionBase>; _ArgTypes = {rclcpp::node_interfaces::NodeBaseInterface*, const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, const rcl_subscription_options_t&}; std::function<_Res(_ArgTypes ...)>::_Requires<std::function<_Res(_ArgTypes ...)>::_Callable<typename std::decay<_U1>::type>, std::function<_Res(_ArgTypes ...)>&> = std::function<std::shared_ptr<rclcpp::SubscriptionBase>(rclcpp::node_interfaces::NodeBaseInterface*, const std::__cxx11::basic_string<char>&, const rcl_subscription_options_t&)>&]’, declared using local type ‘rclcpp::create_subscription_factory(CallbackT&&, const rclcpp::SubscriptionEventCallbacks&, typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr, std::shared_ptr<PublisherT>) [with MessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; CallbackT = std::function<void(std::shared_ptr<builtin_interfaces::msg::Duration_<std::allocator<void> > >, const int&)>&; Alloc = std::allocator<void>; CallbackMessageT = builtin_interfaces::msg::Duration_<std::allocator<void> >; SubscriptionT = rclcpp::Subscription<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::allocator<void> >; typename rclcpp::message_memory_strategy::MessageMemoryStrategy<CallbackMessageT, Alloc>::SharedPtr = std::shared_ptr<rclcpp::message_memory_strategy::MessageMemoryStrategy<builtin_interfaces::msg::Duration_<std::allocator<void> >, std::allocator<void> > >]::<lambda(rclcpp::node_interfaces::NodeBaseInterface*, const string&, const rcl_subscription_options_t&)>’, is used but never defined [-fpermissive]
+make[2]: *** [CMakeFiles/ros1_bridge.dir/generated/action_msgs__msg__GoalStatusArray__factories.cpp.o] Error 1
+make[2]: *** [CMakeFiles/ros1_bridge.dir/src/builtin_interfaces_factories.cpp.o] Error 1
+make[1]: *** [CMakeFiles/ros1_bridge.dir/all] Error 2
+make: *** [all] Error 2
+---
+Failed   <<< ros1_bridge [7.42s, exited with code 2]
+
+Summary: 0 packages finished [7.51s]
+  1 package failed: ros1_bridge
+  1 package had stderr output: ros1_bridge
